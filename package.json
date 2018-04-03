@@ -1,0 +1,27 @@
+{
+  "name": "@bukharim96/ress",
+  "version": "1.0.0",
+  "description": "A prop orientated LESS-like StyleSheet for React Components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bukharim96/ress.git"
+  },
+  "keywords": [
+    "react",
+    "react-native",
+    "react-stylesheet",
+    "dynamic-stylesheet",
+    "react-css",
+    "react-less"
+  ],
+  "author": "bukharim96",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bukharim96/ress/issues"
+  },
+  "homepage": "https://github.com/bukharim96/ress#readme"
+}
