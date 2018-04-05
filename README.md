@@ -50,40 +50,40 @@ import { Text } from 'react-native'
 import RESS from '@bukharim96/ress'
 
 class Title extends Component {
-	constructor(props) {
-		super(props)
-	}
+  constructor(props) {
+    super(props)
+  }
 
-	render() {
-		let titleStyles = new RESS(this.props, {
-				default: {
-					fontWeight: 'bold',
-					color: '#000',
-					fontSize: 25,
-					textAlign: 'center'
-				},
-				
-				'h1, h2, h3, h4, h5, h6': {
-					marginBottom: 12,
-					fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Ubuntu', 'Helvetica Neue', sans-serif",
-					textTransform: 'uppercase',
+  render() {
+    let titleStyles = new RESS(this.props, {
+        default: {
+          fontWeight: 'bold',
+          color: '#000',
+          fontSize: 25,
+          textAlign: 'center'
+        },
+        
+        'h1, h2, h3, h4, h5, h6': {
+          marginBottom: 12,
+          fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Ubuntu', 'Helvetica Neue', sans-serif",
+          textTransform: 'uppercase',
 
-					fancy: {
-						fontFamily: 'cursive',
-						fontStyle: 'italic'
-					}
-				},
+          fancy: {
+            fontFamily: 'cursive',
+            fontStyle: 'italic'
+          }
+        },
 
-				h1: { fontSize: 30 },
-				h2: { fontSize: 25 },
-				h3: { fontSize: 20 },
-				h4: { fontSize: 15 },
-				h5: { fontSize: 10 },
-				h6: { fontSize: 7 }
-			})
+        h1: { fontSize: 30 },
+        h2: { fontSize: 25 },
+        h3: { fontSize: 20 },
+        h4: { fontSize: 15 },
+        h5: { fontSize: 10 },
+        h6: { fontSize: 7 }
+      })
 
-		return <Text style={titleStyles} children={this.props.children} />
-	}
+    return <Text style={titleStyles} children={this.props.children} />
+  }
 }
 ```
 
