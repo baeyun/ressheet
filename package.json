@@ -1,7 +1,7 @@
 {
   "name": "@bukharim96/ress",
   "version": "1.0.0",
-  "description": "A prop orientated LESS-like StyleSheet for React Components",
+  "description": "A prop-based LESS-like StyleSheet for React Components",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

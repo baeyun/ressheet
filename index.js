@@ -1,23 +1,25 @@
 /*
  * RESS
  *
- * A prop orientated LESS-like StyleSheet for React Components
+ * A prop-based LESS-like StyleSheet for React Components
  */
 export default class RESS {
-	constructor(RESSheet, props) {
-		if (
-			typeof RESSheet !== 'string'
-			&& RESSheet.constructor !== String
-		) throw Error('Provide an appropriate RESSheet')
-
+	constructor(props, RESSheet) {
 		if (
 			typeof props !== 'object'
 			&& props.constructor !== Object
 		) throw Error('Provide props to validate styles')
+
+		if (
+			typeof RESSheet !== 'object'
+			&& RESSheet.constructor !== Object
+		) throw Error('Provide an appropriate RESSheet')
+
+		this.styleObj = {}
 		
 		return this._evaluateRESS(
-			RESSheet,
-			this._qualifyProps(props)
+			this._qualifyProps(props),
+			RESSheet
 		)
 	}
 
@@ -27,8 +29,8 @@ export default class RESS {
 	 * Lists an array of all truthy props
 	 * from prop object.
 	 *
-	 * @params rawPropsObj [object]
-	 * @return [array] truthy props
+	 * @params rawPropsObj {object}
+	 * @return {array} truthy props
 	 */
 	_qualifyProps(rawPropsObj) {
 		let qualifiedProps = []
@@ -43,8 +45,8 @@ export default class RESS {
 	/*
 	 * arrayInArray
 	 *
-	 * @params arr1 [array], arr2 [array]
-	 * @return true [bool] upon first match
+	 * @params arr1 {array}, arr2 {array}
+	 * @return true {bool} upon first match
 	 */
 	_arrayInArray(arr1, arr2) {
 		if (
@@ -62,39 +64,43 @@ export default class RESS {
 	/*
 	 * evaluateRESS
 	 *
-	 * @params RESSheet [string], qualifiedProps [array]
-	 * @return [object] of style properties
+	 * @params qualifiedProps {object}, RESSheet {object}, selector {string} optional
+	 * @return {object} of style properties
 	 */
-	_evaluateRESS(RESSheet, qualifiedProps) {
-		let codeblocks = RESSheet.split(/\}/g),
-			styles = {}
-
-		for (let i = 0; i < codeblocks.length; i++) {
-			let codeblock = codeblocks[i],
-				selector = codeblock.match(/(.+)\{/)
-
-			if (selector) {
-				let selectorProps = selector[1].split(/,\s*/).map(s => s.trim())
-
-				if ( // Bail if not qualified
-					!this._arrayInArray(selectorProps, qualifiedProps)
-				) continue
-
-				codeblock
-				.replace(selector[0], '')
-				.trim()
-				.split(/\n/)
-				.forEach(style => {
-					let styleProp = style.match(/\w+/)[0],
-						styleVal = style.match(/\w+:(.+)/)[1].trim()
+	_evaluateRESS(qualifiedProps, RESSheet, selector=null) {
+		if (selector)
+			if (this._arrayInArray(qualifiedProps, selector.split(/\s*\,\s*/)))
+				for (let k in RESSheet)
+					if (typeof RESSheet[k] === 'object' && RESSheet[k].constructor === Object)
+						// Recursion of this._evaluateRESS() if property is object
+						this._evaluateRESS(
+							qualifiedProps,
+							RESSheet[k],
+							k
+						)
+					else
+						this.styleObj[k] = RESSheet[k]
+			else
+				return null
+		else
+			for (let selector in RESSheet) {
+				if (
+					this._arrayInArray(qualifiedProps, selector.split(/\s*\,\s*/))
+					|| selector.includes('default')
+				) for (let k in RESSheet[selector]) {
+					let styleVal = RESSheet[selector][k]
 					
-					styles[styleProp] = !isNaN(styleVal)
-										? Number(styleVal)
-										: styleVal
-				})
+					if (typeof styleVal !== 'object' && styleVal.constructor !== Object)
+						this.styleObj[k] = styleVal
+					else // Handle nested styles
+						this._evaluateRESS(
+							qualifiedProps,
+							RESSheet[selector][k],
+							k
+						)
+				}
 			}
-		}
 
-		return styles
+		return this.styleObj
 	}
 }
