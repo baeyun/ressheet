@@ -16,7 +16,7 @@
 > - **Consistency** across browsers (including the notorious Internet Explorer)
 > - **MIT Licensed**, perfect for personal and commercial use
 
-<h2 align="center">Getting Started</h2>
+## Getting Started
 
 ### Installation
 
@@ -40,7 +40,7 @@ NPM / CommonJS require() Approach:
 var RESS = require('@bukharim96/ress')
 ```
 
-<h2 align="center">Usage</h2>
+## Usage
 
 RESS allows you to write better StyleSheets with `react` by using component `props` as CSS-like classes. Check the following `title` component:
 
@@ -107,7 +107,7 @@ Notice how RESS allows multi *selectors* in `'h1, h2, h3, h4, h5, h6': {...}`. S
 
 Without RESS, the above code would've been larger. This code is valid for both, `react` and `react-native`.
 
-<h2 align="center">Browser &amp; Device Support</h2>
+## Browser &amp; Device Support
 
 **Note**: RESS supports both `react` and `react-native` out-of-the-box, along with all major browsers as highlighted below:
 
@@ -115,11 +115,11 @@ Without RESS, the above code would've been larger. This code is valid for both, 
 |---------|-------|--------|-------|---------|-------|-------|-------|
 | (Yes)   | (Yes) | (Yes)  | (Yes) | (Yes)   | (Yes) | (Yes) | (Yes) |
 
-<h2 align="center">Contributing</h2>
+## Contributing
 
 **RESS** is a free and open source library, and I'd appreciate any help you're willing to give - be it fixing bugs, improving documentation, or suggesting new features or enhancements.
 
-<h2 align="center"><a href="https://github.com/bukharim96/ress/blob/master/LICENSE">License</a></h2>
+## [License](https://github.com/bukharim96/pregx/blob/master/LICENSE)
 
 **RESS** is licensed under the **MIT License** which makes it great for both personal and commercial use.
 
