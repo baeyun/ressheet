@@ -1,7 +1,11 @@
+<p align="center">
+	<img src="https://raw.githubusercontent.com/bukharim96/ress/master/resources/ress-logo@62.18percent.png">
+</p>
 
 <h1 align="center">RESS</h1>
+
 <p align="center">
-<small>Only ~3kb, no external dependencies &amp; supports all major browsers</small>
+	<small>Only ~3kb, no external dependencies &amp; supports all major browsers</small>
 </p>
 
 ***React Evaluated StyleSheet***, better known as **RESS**, is a tiny preprocessor that aims to be for React what LESS is to CSS. Highlights:
