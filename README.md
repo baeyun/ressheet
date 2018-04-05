@@ -100,7 +100,7 @@ I bet you noticed that `new RESS(props, {...})` accepts two parameters, namely: 
 The following would then display:
 
 <p align="center">
-	<img src="https://raw.githubusercontent.com/bukharim96/ress/master/resources/ress-001.png">
+	<img src="https://raw.githubusercontent.com/bukharim96/ress/master/resources/ress-001.PNG">
 </p>
 
 Notice how RESS allows multi *selectors* in `'h1, h2, h3, h4, h5, h6': {...}`. Styles specified there would affect components with any `h1` - `h6` props. RESS also features nested, styles similiar to LESS, as seen in the above demo.
