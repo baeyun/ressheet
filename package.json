@@ -1,6 +1,6 @@
 {
   "name": "@bukharim96/ress",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A prop-based LESS-like StyleSheet for React Components",
   "main": "index.js",
   "scripts": {
