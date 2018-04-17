@@ -1,9 +1,9 @@
 /*
- * RESS
+ * RESSheet
  *
  * A prop-based LESS-like StyleSheet for React Components
  */
-export default class RESS {
+export default class RESSheet {
 	constructor(props, RESSheet) {
 		if (
 			typeof props !== 'object'
@@ -70,16 +70,23 @@ export default class RESS {
 	_evaluateRESS(qualifiedProps, RESSheet, selector=null) {
 		if (selector)
 			if (this._arrayInArray(qualifiedProps, selector.split(/\s*\,\s*/)))
-				for (let k in RESSheet)
-					if (typeof RESSheet[k] === 'object' && RESSheet[k].constructor === Object)
+				for (let k in RESSheet) {
+					let styleVal = RESSheet[k]
+					
+					if (
+						typeof styleVal === 'object'
+						&& styleVal.constructor === Object
+						|| styleVal === null // cater for null value in React Native
+					)
 						// Recursion of this._evaluateRESS() if property is object
 						this._evaluateRESS(
 							qualifiedProps,
-							RESSheet[k],
+							styleVal,
 							k
 						)
 					else
-						this.styleObj[k] = RESSheet[k]
+						this.styleObj[k] = styleVal
+				}
 			else
 				return null
 		else
@@ -90,7 +97,11 @@ export default class RESS {
 				) for (let k in RESSheet[selector]) {
 					let styleVal = RESSheet[selector][k]
 					
-					if (typeof styleVal !== 'object' && styleVal.constructor !== Object)
+					if (
+						typeof styleVal !== 'object'
+						&& styleVal.constructor !== Object
+						|| styleVal === null // cater for null value in React Native
+					)
 						this.styleObj[k] = styleVal
 					else // Handle nested styles
 						this._evaluateRESS(
