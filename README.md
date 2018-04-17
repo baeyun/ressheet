@@ -2,7 +2,7 @@
 	<img src="https://raw.githubusercontent.com/bukharim96/ress/master/resources/ress-logo@80.25percent.png">
 </p>
 
-<h1 align="center">RESS</h1>
+<h1 align="center">RESSheetheet</h1>
 
 <p align="center">
 	<small>Only ~3kb, no external dependencies &amp; supports all major browsers</small>
@@ -23,7 +23,7 @@
 Package could be installed via `npm`.
 
 ```
-npm install @bukharim96/ress --save
+npm install ressheet --save
 ```
 
 ### Import / require() Package
@@ -31,23 +31,23 @@ npm install @bukharim96/ress --save
 ES6 Import Approach:
 
 ```javascript
-import RESS from '@bukharim96/ress'
+import RESSheet from 'ressheet'
 ```
 
 NPM / CommonJS require() Approach:
 
 ```javascript
-var RESS = require('@bukharim96/ress')
+var RESSheet = require('ressheet')
 ```
 
 ## Usage
 
-RESS allows you to write better StyleSheets with `react` by using component `props` as CSS-like classes. Check the following `title` component:
+RESSheet allows you to write better StyleSheets with React (Native) by using component `props` as CSS-like classes. Check the following `title` component:
 
 ```javascript
 import React, { Component } from 'react'
 import { Text } from 'react-native'
-import RESS from '@bukharim96/ress'
+import RESSheet from 'ressheet'
 
 class Title extends Component {
   constructor(props) {
@@ -55,7 +55,7 @@ class Title extends Component {
   }
 
   render() {
-    let titleStyles = new RESS(this.props, {
+    let titleStyles = new RESSheet(this.props, {
         default: {
           fontWeight: 'bold',
           color: '#000',
@@ -87,7 +87,7 @@ class Title extends Component {
 }
 ```
 
-I bet you noticed that `new RESS(props, {...})` accepts two parameters, namely: props object and the *RESSheet* object. I used a class component just for demonstration, however always make sure to use stateless components where possible. Anyways, the `<Title />` component could now be used as follows:
+I bet you noticed that `new RESSheet(props, {...})` accepts two parameters, namely: props object and the *RESSheetheet* object. I used a class component just for demonstration, however always make sure to use stateless components where possible. Anyways, the `<Title />` component could now be used as follows:
 
 ```html
 <Title>This is an ordinary title</Title>
@@ -103,13 +103,13 @@ The following would then display:
 	<img src="https://raw.githubusercontent.com/bukharim96/ress/master/resources/ress-001.PNG">
 </p>
 
-Notice how RESS allows multi *selectors* in `'h1, h2, h3, h4, h5, h6': {...}`. Styles specified there would affect components with any `h1` - `h6` props. RESS also features nested, styles similiar to LESS, as seen in the above demo.
+Notice how RESSheet allows multi *selectors* in `'h1, h2, h3, h4, h5, h6': {...}`. Styles specified there would affect components with any `h1` - `h6` props. RESSheet also features nested, styles similiar to LESS, as seen in the above demo.
 
-Without RESS, the above code would've been larger. This code is valid for both, `react` and `react-native`.
+Without RESSheet, the above code would've been larger. This code is valid for both, `react` and `react-native`.
 
 ## Browser &amp; Device Support
 
-**Note**: RESS supports both `react` and `react-native` out-of-the-box, along with all major browsers as highlighted below:
+**Note**: RESSheet supports both `react` and `react-native` out-of-the-box, along with all major browsers as highlighted below:
 
 | Android | IOS   | Chrome | Edge  | Firefox | IE    | Opera | Safari|
 |---------|-------|--------|-------|---------|-------|-------|-------|
@@ -117,10 +117,10 @@ Without RESS, the above code would've been larger. This code is valid for both, 
 
 ## Contributing
 
-**RESS** is a free and open source library, and I'd appreciate any help you're willing to give - be it fixing bugs, improving documentation, or suggesting new features or enhancements.
+**RESSheet** is a free and open source library, and I'd appreciate any help you're willing to give - be it fixing bugs, improving documentation, or suggesting new features or enhancements.
 
 ## [License](https://github.com/bukharim96/pregx/blob/master/LICENSE)
 
-**RESS** is licensed under the **MIT License** which makes it great for both personal and commercial use.
+**RESSheet** is licensed under the **MIT License** which makes it great for both personal and commercial use.
 
 <p align="center"><strong>Enjoy</i> ;)</strong></p>
