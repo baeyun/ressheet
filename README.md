@@ -40,6 +40,12 @@ NPM / CommonJS require() Approach:
 var RESSheet = require('ressheet')
 ```
 
+## Showcase
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/bukharim96/ress/master/resources/ress-code-plus-showcase.png">
+</p>
+
 ## Usage
 
 RESSheet allows you to write better StyleSheets with React (Native) by using component `props` as CSS-like classes. Check the following `title` component:
