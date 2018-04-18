@@ -16,6 +16,12 @@
 > - **Consistency** across browsers (including the notorious Internet Explorer)
 > - **MIT Licensed**, perfect for personal and commercial use
 
+## Showcase
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/bukharim96/ress/master/resources/ress-code-plus-showcase.png">
+</p>
+
 ## Getting Started
 
 ### Installation
@@ -39,12 +45,6 @@ NPM / CommonJS require() Approach:
 ```javascript
 var RESSheet = require('ressheet')
 ```
-
-## Showcase
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/bukharim96/ress/master/resources/ress-code-plus-showcase.png">
-</p>
 
 ## Usage
 
