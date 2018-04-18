@@ -1,5 +1,5 @@
 <p align="center">
-	<img src="https://raw.githubusercontent.com/bukharim96/ress/master/resources/ress-logo@80.25percent.png">
+	<img height="170px" src="https://raw.githubusercontent.com/bukharim96/ress/master/resources/ress-logo@80.25percent.png">
 </p>
 
 <h1 align="center">RESSheet</h1>
