@@ -2,7 +2,7 @@
 	<img src="https://raw.githubusercontent.com/bukharim96/ress/master/resources/ress-logo@80.25percent.png">
 </p>
 
-<h1 align="center">RESSheetheet</h1>
+<h1 align="center">RESSheet</h1>
 
 <p align="center">
 	<small>Only ~3kb, no external dependencies &amp; supports all major browsers</small>
@@ -87,7 +87,7 @@ class Title extends Component {
 }
 ```
 
-I bet you noticed that `new RESSheet(props, {...})` accepts two parameters, namely: props object and the *RESSheetheet* object. I used a class component just for demonstration, however always make sure to use stateless components where possible. Anyways, the `<Title />` component could now be used as follows:
+I bet you noticed that `new RESSheet(props, {...})` accepts two parameters, namely: props object and the *RESSheet* object. I used a class component just for demonstration, however always make sure to use stateless components where possible. Anyways, the `<Title />` component could now be used as follows:
 
 ```html
 <Title>This is an ordinary title</Title>
